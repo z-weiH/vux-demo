@@ -39,6 +39,9 @@ router.beforeEach((to, from, next) => {
     // 权限拦截
   }
   // 权限判断 end
+  window.sessionStorage.setItem('history',JSON.stringify({
+    transitionName : 'forward'
+  }));
 });
 
 /* 后置钩子 */
