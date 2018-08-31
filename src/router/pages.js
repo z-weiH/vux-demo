@@ -1,21 +1,24 @@
 let pages = [
   {
-    path : '/',
-    component : resolve => require(['@/views/root'], resolve), 
-    children : [
-      {
-        path : 'index',
-        component : resolve => require(['@/views/index'], resolve), 
-      },
-      {
-        path : 'shoucang',
-        component : resolve => require(['@/views/shoucang'], resolve), 
-      },
-      {
-        path : 'wode',
-        component : resolve => require(['@/views/wode'], resolve), 
-      },
-    ],
+    path : '/index',
+    component : resolve => require(['@/views/index'], resolve),
+    meta : {
+      weight : 1,
+    },
+  },
+  {
+    path : '/shoucang',
+    component : resolve => require(['@/views/shoucang'], resolve),
+    meta : {
+      weight : 2,
+    },
+  },
+  {
+    path : '/wode',
+    component : resolve => require(['@/views/wode'], resolve),
+    meta : {
+      weight : 3,
+    },
   },
 ];
 

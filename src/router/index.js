@@ -1,11 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// 进度条
-import NProgress from 'nprogress'
-NProgress.configure({ showSpinner: false });  
-import 'nprogress/nprogress.css'
-
 // 权限 排除页面
 import jurisdictionExclude from './jurisdictionExclude'
 // 所有 页面 router
@@ -23,8 +18,6 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   // 返回顶部
   window.scrollTo(0, 0);
-  NProgress.start();
-  
   // 用户超时 拦截
 
   // 权限判断 start
@@ -39,14 +32,11 @@ router.beforeEach((to, from, next) => {
     // 权限拦截
   }
   // 权限判断 end
-  window.sessionStorage.setItem('history',JSON.stringify({
-    transitionName : 'forward'
-  }));
 });
 
 /* 后置钩子 */
 router.afterEach((to, from) => {
-  NProgress.done();
+
 });
 
 export default router

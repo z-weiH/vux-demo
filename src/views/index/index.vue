@@ -12,4 +12,9 @@
 
 <style scoped>
 
+div{
+  height: 100%;
+  background-color: #ffcc35;
+}
+
 </style>
