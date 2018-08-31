@@ -12,9 +12,11 @@
       var hammer = new Hammer(square);
       hammer.on('swipeleft', (e) => {
         this.$router.push('/wode');
+        this.$store.commit('layout/setPageActive',2);
       });
       hammer.on('swiperight', (e) => {
         this.$router.push('/index');
+        this.$store.commit('layout/setPageActive',0);
       });
     },
   }

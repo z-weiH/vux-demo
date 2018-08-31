@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <tabbar v-model="active">
+    <tabbar v-model="$store.state.layout.pageActive">
       <tabbar-item link="/index">
         <span slot="label">首页</span>
       </tabbar-item>
@@ -43,11 +43,12 @@
     },
     mounted() {
       setTimeout(() => {
-        this.active = (
+        let active = (
           this.$route.path === '/index' ? 0 :
           this.$route.path === '/shoucang' ? 1 :
-          this.$route.path === '/wode' ? 2 : 0
+          this.$route.path === '/wode' ? 2 : -1
         )
+        this.$store.commit('layout/setPageActive',active);
       },100);
     },
   }

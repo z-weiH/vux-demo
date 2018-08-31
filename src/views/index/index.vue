@@ -12,6 +12,7 @@
       var hammer = new Hammer(square);
       hammer.on('swipeleft', (e) => {
         this.$router.push('/shoucang');
+        this.$store.commit('layout/setPageActive',1);
       });
     },
   }

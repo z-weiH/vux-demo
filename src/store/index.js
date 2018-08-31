@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import demo from './modules/demo'
+import layout from './modules/layout'
 
 
 if(process.env.NODE_ENV === 'development') {
@@ -10,6 +10,6 @@ if(process.env.NODE_ENV === 'development') {
 
 export default new Vuex.Store({
 	modules: {
-		demo,
+		layout,
 	}
 })
