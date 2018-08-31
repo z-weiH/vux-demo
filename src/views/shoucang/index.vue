@@ -18,6 +18,8 @@
         this.$router.push('/index');
         this.$store.commit('layout/setPageActive',0);
       });
+
+      this.$store.commit('layout/setPageActive',1);
     },
   }
 </script>

@@ -21,6 +21,12 @@
 
 <script>
   import { Tabbar, TabbarItem, Group, Cell } from 'vux'
+  /* 
+    实现 滑动动画效果思路
+      1. 定义router 权重 ， 定义动画
+      2. 监听 $route 变化 ， 根据权重 判断 执行 向前进 还是 后退动画
+      3. 执行动画的外层 容器 需要 position: absolute; 不然会有 白边
+  */
   export default {
     components: {
       Tabbar,
@@ -42,14 +48,7 @@
       }
     },
     mounted() {
-      setTimeout(() => {
-        let active = (
-          this.$route.path === '/index' ? 0 :
-          this.$route.path === '/shoucang' ? 1 :
-          this.$route.path === '/wode' ? 2 : -1
-        )
-        this.$store.commit('layout/setPageActive',active);
-      },100);
+
     },
   }
 </script>

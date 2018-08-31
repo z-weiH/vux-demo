@@ -14,6 +14,8 @@
         this.$router.push('/shoucang');
         this.$store.commit('layout/setPageActive',1);
       });
+
+      this.$store.commit('layout/setPageActive',2);
     },
   }
 </script>
