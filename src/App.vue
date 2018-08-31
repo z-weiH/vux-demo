@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <tabbar>
-      <tabbar-item selected link="/index">
+    <tabbar v-model="active">
+      <tabbar-item link="/index">
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item link="/shoucang">
@@ -31,12 +31,24 @@
     data() {
       return {
         transitionName : '',
+        active : -1,
       }
     },
     watch: {
       '$route' (to, from) {
-        this.transitionName = to.meta.weight > from.meta.weight ? 'forward' : 'reverse';
+        if(to.meta.weight && from.meta.weight){
+          this.transitionName = to.meta.weight > from.meta.weight ? 'forward' : 'reverse';
+        }
       }
+    },
+    mounted() {
+      setTimeout(() => {
+        this.active = (
+          this.$route.path === '/index' ? 0 :
+          this.$route.path === '/shoucang' ? 1 :
+          this.$route.path === '/wode' ? 2 : 0
+        )
+      },100);
     },
   }
 </script>
@@ -48,21 +60,13 @@
     min-height: 100%;
     .router-box{
       height: 100%;
-      box-sizing: border-box;
-      padding-bottom: 50px;
+      position: relative;
     }
   }
 
 </style>
 
 <style lang="less">
-
-.fade-enter-active, .fade-leave-active {
-  transition: all 0.3s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 
 //微信切换样式 ，左右滚动
 //前进动画样式

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-page">
     3
   </div>
 </template>
@@ -13,7 +13,6 @@
 <style scoped>
 
 div{
-  height: 100%;
   background-color: #1daee9;
 }
 
