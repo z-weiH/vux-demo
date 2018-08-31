@@ -1,5 +1,9 @@
 let pages = [
   {
+    path : '/',
+    redirect : '/index',
+  },
+  {
     path : '/index',
     component : resolve => require(['@/views/index'], resolve),
     meta : {
