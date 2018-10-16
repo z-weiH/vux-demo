@@ -1,6 +1,6 @@
 <template>
   <div class="layout-page" ref="page">
-    1
+    <div class="demo">我是按钮</div>
   </div>
 </template>
 
@@ -23,6 +23,17 @@
 
 div{
   background-color: #ffcc35;
+}
+
+.demo{
+  width: 224px;
+  height: 78px;
+  line-height: 78px;
+  border-radius: 10px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
 }
 
 </style>
