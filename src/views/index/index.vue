@@ -1,6 +1,6 @@
 <template>
   <div class="layout-page" ref="page">
-    <div class="demo">我是按钮</div>
+    <div @click="handleClick" class="demo">我是按钮</div>
   </div>
 </template>
 
@@ -15,6 +15,11 @@
       });
 
       this.$store.commit('layout/setPageActive',0);
+    },
+    methods : {
+      handleClick() {
+        console.log('点击事件');
+      },
     },
   }
 </script>
