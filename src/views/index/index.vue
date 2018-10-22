@@ -18,7 +18,7 @@
     },
     methods : {
       handleClick() {
-        console.log('点击事件');
+        console.log('点击事件2');
       },
     },
   }
