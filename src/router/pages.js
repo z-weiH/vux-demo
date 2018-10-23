@@ -24,6 +24,19 @@ let pages = [
       weight : 3,
     },
   },
+  {
+    path : '/arb',
+    component : resolve => require(['@/views/arb/index'], resolve),
+    children : [
+      {
+        path : 'login',
+        component : resolve => require(['@/views/arb/login'], resolve),
+        meta : {
+          title : '账号登录'
+        },
+      }
+    ],
+  },
 ];
 
 export default pages

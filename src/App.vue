@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <tabbar v-model="$store.state.layout.pageActive">
+    <tabbar v-if="$route.meta.weight" v-model="$store.state.layout.pageActive">
       <tabbar-item link="/index">
         <span slot="label">首页</span>
       </tabbar-item>
@@ -44,6 +44,8 @@
       '$route' (to, from) {
         if(to.meta.weight && from.meta.weight){
           this.transitionName = to.meta.weight > from.meta.weight ? 'forward' : 'reverse';
+        }else{
+          this.transitionName = '';
         }
       }
     },

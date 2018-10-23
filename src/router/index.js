@@ -36,7 +36,10 @@ router.beforeEach((to, from, next) => {
 
 /* 后置钩子 */
 router.afterEach((to, from) => {
-
+  // 设置页面 title
+  if(to.meta.title) {
+    document.title = to.meta.title;
+  }
 });
 
 export default router
