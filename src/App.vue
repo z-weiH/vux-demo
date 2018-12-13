@@ -73,23 +73,27 @@
 //微信切换样式 ，左右滚动
 //前进动画样式
 .forward-enter-active,.forward-leave-active{
-  transition: all 0.3s;
+  transition: all .5s;
 }
 .forward-enter{
   transform: translateX(100%);
+  opacity: 0;
 }
 .forward-leave-to{
   transform: translateX(-100%);
+  opacity: 1;
 }
 // 后退动画样式
 .reverse-enter-active,.reverse-leave-active{
-  transition: all 0.3s;
+  transition: all .5s;
 }
 .reverse-enter{
   transform: translateX(-100%);
+  opacity: 0;
 }
 .reverse-leave-to{
   transform: translateX(100%);
+  opacity: 1;
 }
 
 </style>
