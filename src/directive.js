@@ -11,6 +11,7 @@ import Hammer from 'hammerjs'
     swiperight - 向右滑动
     swipeup - 向上滑动
     swipedown - 向下滑动
+    ...以及hammer所有支持的事件
 */
 Vue.directive('touch',{
   bind(el, binding, vnode) {
