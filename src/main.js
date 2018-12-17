@@ -31,10 +31,13 @@ import cookie from 'js-cookie'
 Vue.prototype.$cookie = cookie;
 
 // 引入 vconsole
-//if(process.env.NODE_ENV === 'development') {
+/* if(process.env.NODE_ENV === 'development') {
   let VConsole = require('vconsole');
   const vConsole = new VConsole();
-//}
+} */
+
+// 引入 指令
+import './directive.js'
 
 
 /* eslint-disable no-new */
