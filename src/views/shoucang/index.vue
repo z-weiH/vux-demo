@@ -1,23 +1,24 @@
 <template>
-  <div class="layout-page" ref="page">
+  <div class="layout-page" v-touch.swipeleft="handleLeft" v-touch.swiperight="handleRight">
     2
   </div>
 </template>
 
 <script>
-  import Hammer from 'hammerjs'
   export default {
     mounted() {
-      let square = this.$refs.page;
-      var hammer = new Hammer(square);
-      hammer.on('swipeleft', (e) => {
-        this.$router.push('/wode');
-      });
-      hammer.on('swiperight', (e) => {
-        this.$router.push('/index');
-      });
-
+      // 高亮底部 菜单
       this.$store.commit('layout/setPageActive',1);
+    },
+    methods : {
+      // 左滑动
+      handleLeft(e) {
+        this.$router.push('/wode')
+      },
+      // 右滑动
+      handleRight(e) {
+        this.$router.push('/index')
+      },
     },
   }
 </script>

@@ -1,20 +1,20 @@
 <template>
-  <div class="layout-page" ref="page">
+  <div class="layout-page" v-touch.swiperight="handleRight">
     3
   </div>
 </template>
 
 <script>
-  import Hammer from 'hammerjs'
   export default {
     mounted() {
-      let square = this.$refs.page;
-      var hammer = new Hammer(square);
-      hammer.on('swiperight', (e) => {
-        this.$router.push('/shoucang');
-      });
-
+      // 高亮底部 菜单
       this.$store.commit('layout/setPageActive',2);
+    },
+    methods : {
+      // 右滑动
+      handleRight(e) {
+        this.$router.push('/shoucang')
+      },
     },
   }
 </script>

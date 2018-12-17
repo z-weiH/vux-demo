@@ -1,24 +1,22 @@
 <template>
-  <div class="layout-page" ref="page">
+  <div class="layout-page" v-touch.swipeleft="handleLeft">
     <div @click="handleClick" class="demo">我是按钮</div>
   </div>
 </template>
 
 <script>
-  import Hammer from 'hammerjs'
   export default {
     mounted() {
-      let square = this.$refs.page;
-      var hammer = new Hammer(square);
-      hammer.on('swipeleft', (e) => {
-        this.$router.push('/shoucang');
-      });
-
+      // 高亮底部 菜单
       this.$store.commit('layout/setPageActive',0);
     },
     methods : {
       handleClick() {
         console.log('点击事件2');
+      },
+      // 左滑动
+      handleLeft(e) {
+        this.$router.push('/shoucang')
       },
     },
   }
