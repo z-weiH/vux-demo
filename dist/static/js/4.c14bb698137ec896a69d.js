@@ -1,2 +1,0 @@
-webpackJsonp([4],{fKra:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"arb-index-box"},[t("router-view")],1)},staticRenderFns:[]};var a=r("C7Lr")({},n,!1,function(e){r("hQTY")},"data-v-4d3f7768",null);t.default=a.exports},hQTY:function(e,t){}});
-//# sourceMappingURL=4.c14bb698137ec896a69d.js.map
