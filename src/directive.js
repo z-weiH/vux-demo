@@ -12,9 +12,6 @@ import Hammer from 'hammerjs'
     swipeup - 向上滑动
     swipedown - 向下滑动
     ...以及hammer所有支持的事件
-
-    bug：
-      在页面左右切换时候使用swipeleft 以及 swiperight会出现白屏问题。
 */
 Vue.directive('touch',{
   bind(el, binding, vnode) {

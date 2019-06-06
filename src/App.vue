@@ -42,6 +42,15 @@
     },
     watch: {
       '$route' (to, from) {
+        // 解决页面切换动画白屏问题
+        if(this.$store.state.layout.animationStatus === false ) {
+          return;
+        }
+        this.$store.commit('layout/setAnimationStatus',false);
+        window.setTimeout(() => {
+          this.$store.commit('layout/setAnimationStatus',true);
+        },500);
+        // 解决页面切换动画白屏问题
         if(to.meta.weight && from.meta.weight){
           this.transitionName = to.meta.weight > from.meta.weight ? 'forward' : 'reverse';
         }else{

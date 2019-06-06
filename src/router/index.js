@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import jurisdictionExclude from './jurisdictionExclude'
 // 所有 页面 router
 import pages from './pages'
+import store from '../store'
 
 if(process.env.NODE_ENV === 'development') {
   Vue.use(Router);
@@ -18,6 +19,10 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   // 返回顶部
   window.scrollTo(0, 0);
+  // 解决页面切换动画白屏问题
+  if(store.state.layout.animationStatus === false) {
+    return;
+  }
   // 用户超时 拦截
 
   // 权限判断 start
